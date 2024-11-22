@@ -26,7 +26,7 @@ public interface Game {
 
     public void setGameEngine(GameEngine gameEngine);
 
-    public void start();
+    public void start() ;
 
     public void addScene(Scene scene, String sceneID);
 

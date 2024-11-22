@@ -10,6 +10,7 @@ import net.thevpc.gaming.atom.ioc.AtomIoCContainer;
 import net.thevpc.gaming.atom.ioc.GameEngineIoCContainer;
 import net.thevpc.gaming.atom.model.DefaultGameEngineProperties;
 
+import java.io.IOException;
 import java.util.*;
 import net.thevpc.gaming.atom.model.GameEngineProperties;
 
@@ -260,7 +261,7 @@ public class DefaultGameEngine implements GameEngine {
      * {@inheritDoc }
      */
     @Override
-    public void start() {
+    public void start(){
         switch (engineState) {
             case STOPPED:
             case UNINITIALIZED: {

@@ -6,28 +6,31 @@ package net.thevpc.gaming.atom.examples.kombla.main.client.engine;
 
 import net.thevpc.gaming.atom.examples.kombla.main.client.dal.MainClientDAO;
 import net.thevpc.gaming.atom.examples.kombla.main.client.dal.MainClientDAOListener;
+import net.thevpc.gaming.atom.examples.kombla.main.client.dal.SocketMainClientDAO;
 import net.thevpc.gaming.atom.examples.kombla.main.shared.engine.AbstractMainEngine;
 import net.thevpc.gaming.atom.examples.kombla.main.shared.model.DynamicGameModel;
 import net.thevpc.gaming.atom.examples.kombla.main.shared.model.StartGameInfo;
 import net.thevpc.gaming.atom.annotations.AtomSceneEngine;
 import net.thevpc.gaming.atom.model.*;
 
+import java.io.IOException;
+
 
 /**
  * @author Taha Ben Salah (taha.bensalah@gmail.com)
  */
 @AtomSceneEngine(id = "mainClient", columns = 12, rows = 12)
-public class MainClientEngine extends AbstractMainEngine {
+public class MainClientEngine extends AbstractMainEngine implements  MainClientDAOListener {
     private MainClientDAO dao=null;//new TCPMainClientDAO();
     public MainClientEngine() {
     }
 
     @Override
-    protected void sceneActivating() {
+    protected void sceneActivating(){
         //put here your MainClientDAO instance
         //dao = new TCPMainClientDAO();
 //        dao = new UDPMainClientDAO();
-
+        dao = new SocketMainClientDAO();
         dao.start(new MainClientDAOListener() {
             @Override
             public void onModelChanged(final DynamicGameModel model) {
@@ -55,17 +58,15 @@ public class MainClientEngine extends AbstractMainEngine {
         }, getAppConfig(getGameEngine()));
         //call server to connect
         StartGameInfo startGameInfo = dao.connect();
-        //configure model's maze with data retrieved.
         setModel(new DefaultSceneEngineModel(startGameInfo.getMaze()));
-        //create new player
         setCurrentPlayerId(startGameInfo.getPlayerId());
     }
 
-    public void releaseBomb() {
+    public void releaseBomb() throws IOException {
         dao.sendFire();
     }
 
-    public void move(Orientation direction) {
+    public void move(Orientation direction) throws IOException {
         switch (direction){
             case EAST:{
                 dao.sendMoveRight();
@@ -84,5 +85,10 @@ public class MainClientEngine extends AbstractMainEngine {
                 break;
             }
         }
+    }
+
+    @Override
+    public void onModelChanged(DynamicGameModel model) {
+
     }
 }

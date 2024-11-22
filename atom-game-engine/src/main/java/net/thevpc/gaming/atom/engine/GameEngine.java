@@ -7,6 +7,7 @@ package net.thevpc.gaming.atom.engine;
 import net.thevpc.gaming.atom.ioc.AtomIoCContainer;
 import net.thevpc.gaming.atom.model.GameEngineProperties;
 
+import java.io.IOException;
 import java.util.List;
 
 /**

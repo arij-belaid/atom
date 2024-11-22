@@ -10,6 +10,8 @@ import net.thevpc.gaming.atom.presentation.DefaultSceneController;
 import net.thevpc.gaming.atom.presentation.SceneKeyEvent;
 import net.thevpc.gaming.atom.examples.kombla.main.shared.engine.AbstractMainEngine;
 
+import java.io.IOException;
+
 /**
  * @author Taha Ben Salah (taha.bensalah@gmail.com)
  */
@@ -30,23 +32,43 @@ public class MainController extends DefaultSceneController {
         AbstractMainEngine scene = e.getScene().getSceneEngine();
         switch (e.getKeyCode()) {
             case LEFT: {
-                scene.move(Orientation.WEST);
+                try {
+                    scene.move(Orientation.WEST);
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
                 break;
             }
             case RIGHT: {
-                scene.move(Orientation.EAST);
+                try {
+                    scene.move(Orientation.EAST);
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
                 break;
             }
             case UP: {
-                scene.move(Orientation.NORTH);
+                try {
+                    scene.move(Orientation.NORTH);
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
                 break;
             }
             case DOWN: {
-                scene.move(Orientation.SOUTH);
+                try {
+                    scene.move(Orientation.SOUTH);
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
                 break;
             }
             case SPACE: {
-                scene.releaseBomb();
+                try {
+                    scene.releaseBomb();
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
                 break;
             }
         }

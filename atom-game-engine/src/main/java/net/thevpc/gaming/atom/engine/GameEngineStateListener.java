@@ -1,5 +1,7 @@
 package net.thevpc.gaming.atom.engine;
 
+import java.io.IOException;
+
 /**
  * The listener that's notified when game state changes
  *

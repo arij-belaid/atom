@@ -19,6 +19,7 @@ import java.awt.geom.Path2D;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
+import java.io.IOException;
 import java.util.*;
 
 import net.thevpc.gaming.atom.engine.collisiontasks.SpriteCollisionTask;

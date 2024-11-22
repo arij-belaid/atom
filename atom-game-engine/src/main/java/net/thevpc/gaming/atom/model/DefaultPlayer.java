@@ -149,4 +149,14 @@ public class DefaultPlayer implements Player {
         }
         return selection;
     }
+
+    @Override
+    public Point getPosition() {
+        return null;
+    }
+
+    @Override
+    public Player setPosition(Point p) {
+        return null;
+    }
 }

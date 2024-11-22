@@ -12,4 +12,8 @@ public class ProtocolConstants {
     public static final int FIRE = 6;
     public static final int OK = 7;
     public static final int KO = 8;
+    public static final int GAME_FRAME = 7;
+
+    public static final int PLAYERS_LIST = 2;
+    public static final int SPRITES_LIST =10 ;
 }

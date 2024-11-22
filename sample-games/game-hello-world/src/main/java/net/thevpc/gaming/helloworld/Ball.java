@@ -34,5 +34,7 @@ public class Ball {
     @OnInit
     private void init(){
         sprite.setLocation(2,2);
+        sprite.setCollisionTask(new Ball2DefaultSpriteCollisionManager());
     }
+
 }

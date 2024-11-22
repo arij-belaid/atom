@@ -6,6 +6,8 @@ import net.thevpc.gaming.atom.model.ModelDimension;
 import net.thevpc.gaming.atom.model.Orientation;
 import net.thevpc.gaming.atom.model.Sprite;
 
+import java.io.IOException;
+
 /**
  * Created by vpc on 10/7/16.
  */
@@ -25,9 +27,9 @@ public abstract class AbstractMainEngine extends DefaultSceneEngine {
         return findSpriteByKind("Person", getCurrentPlayerId(), null);
     }
 
-    public abstract void releaseBomb();
+    public abstract void releaseBomb() throws IOException;
 
-    public abstract void move(Orientation direction);
+    public abstract void move(Orientation direction) throws IOException;
 
     public Sprite createExplosion(int playerId) {
         Sprite person = createSprite("Explosion");

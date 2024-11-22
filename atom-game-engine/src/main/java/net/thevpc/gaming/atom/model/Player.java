@@ -52,4 +52,6 @@ public interface Player extends Serializable {
 
     SpriteSelection getSelection();
 
+    Point getPosition();          // Retrieves the player's position
+    Player setPosition(Point p);
 }

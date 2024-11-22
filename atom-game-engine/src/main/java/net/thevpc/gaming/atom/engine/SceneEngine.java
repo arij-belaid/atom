@@ -12,6 +12,7 @@ import net.thevpc.gaming.atom.model.*;
 
 import java.awt.geom.Path2D;
 import java.beans.PropertyChangeListener;
+import java.io.IOException;
 import java.util.List;
 
 /**

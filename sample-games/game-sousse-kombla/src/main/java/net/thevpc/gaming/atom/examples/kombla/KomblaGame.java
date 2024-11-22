@@ -6,6 +6,8 @@ package net.thevpc.gaming.atom.examples.kombla;
 
 import net.thevpc.gaming.atom.Atom;
 
+import java.io.IOException;
+
 /**
  * @author Taha Ben Salah (taha.bensalah@gmail.com)
  */

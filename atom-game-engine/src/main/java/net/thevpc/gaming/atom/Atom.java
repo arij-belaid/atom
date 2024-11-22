@@ -5,7 +5,6 @@
 package net.thevpc.gaming.atom;
 
 import net.thevpc.gaming.atom.presentation.*;
-import net.thevpc.gaming.atom.presentation.*;
 import net.thevpc.gaming.atom.engine.DefaultGameEngine;
 import net.thevpc.gaming.atom.engine.GameEngine;
 
@@ -18,7 +17,7 @@ public class Atom {
     public static final SpriteViewImageSelector IMAGE_SELECTOR_SPRITE_VARIATION = SpriteStyleImageSelector.INSTANCE;
     public static final SpriteViewImageSelector IMAGE_SELECTOR_SPRITE_PLAYER = SpritePlayerImageSelector.INSTANCE;
 
-    public static Game startGame() {
+    public static Game startGame()  {
         Game game = createGame();
         game.start();
         return game;

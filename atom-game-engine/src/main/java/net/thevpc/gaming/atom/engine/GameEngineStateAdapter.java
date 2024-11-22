@@ -4,6 +4,8 @@
  */
 package net.thevpc.gaming.atom.engine;
 
+import java.io.IOException;
+
 /**
  * Adapter class for GameEngineListener
  *
@@ -16,7 +18,7 @@ public class GameEngineStateAdapter implements GameEngineStateListener {
      * Does nothing
      */
     @Override
-    public void gameStarted(GameEngine game) {
+    public void gameStarted(GameEngine game){
     }
 
     /**

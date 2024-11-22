@@ -4,6 +4,8 @@ import net.thevpc.gaming.atom.examples.kombla.main.shared.model.StartGameInfo;
 
 import net.thevpc.gaming.atom.examples.kombla.main.shared.engine.AppConfig;
 
+import java.io.IOException;
+
 /**
  * Created by vpc on 10/7/16.
  */
@@ -22,13 +24,13 @@ public interface MainClientDAO {
      */
     public StartGameInfo connect();
 
-    public void sendMoveLeft();
+    public void sendMoveLeft() throws IOException;
 
-    public void sendMoveRight();
+    public void sendMoveRight() throws IOException;
 
-    public void sendMoveUp();
+    public void sendMoveUp() throws IOException;
 
-    public void sendMoveDown();
+    public void sendMoveDown() throws IOException;
 
-    public void sendFire();
+    public void sendFire() throws IOException;
 }
